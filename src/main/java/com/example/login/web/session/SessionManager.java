@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.UUID;
@@ -55,6 +54,7 @@ public class SessionManager {
         if(request.getCookies() == null) {
             return null;
         }
+
         return Arrays.stream(request.getCookies())
                 .filter(cookie -> cookie.getName().equals(cookieName))
                 .findAny()
